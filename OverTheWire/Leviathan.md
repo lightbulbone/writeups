@@ -1,9 +1,9 @@
-Game Site: leviathan.labs.overthewire.org
+Game Site: leviathan.labs.overthewire.org  
 
 # Level 0
 
-User: leviathan0
-Pass: leviathan0
+User: leviathan0  
+Pass: leviathan0  
 
     leviathan0@melinda:~$ grep -i pass .backup/bookmarks.html 
     <DT><A HREF="http://www.goshen.edu/art/ed/teachem.htm" ADD_DATE="1146092098" LAST_CHARSET="ISO-8859-1" ID="98012771">Pass it
@@ -12,8 +12,8 @@ Pass: leviathan0
 
 # Level 1
 
-User: leviathan1
-Pass: rioGegei8m
+User: leviathan1  
+Pass: rioGegei8m  
 
     leviathan1@melinda:~$ ./check 
     password: xes
@@ -46,8 +46,8 @@ the program would drop into a shell running with the privileges of leviathan2.
     
 # Level 2
 
-User: leviathan2
-Pass: ougahZi8Ta
+User: leviathan2  
+Pass: ougahZi8Ta  
 
 This level hinges on the use of `access()` and passing the given string to `cat`.  If we create two files, 
 one that links to the password file and another with the same basename containing a space, we can trick `access()`.
@@ -79,8 +79,8 @@ interpret the space as a filename delimiter and dereference our symlink rather t
 
 # Level 3
 
-User: leviathan3
-Pass: Ahdiemoo1j
+User: leviathan3  
+Pass: Ahdiemoo1j  
 
 This level once again abuses the idea of setuid.  The comparison in this case is not done using `strcmp()` so 
 you can't run ltrace/strace to see what the password is being compared too.  However, if you run `strings` on 
@@ -128,8 +128,8 @@ done using the x86 `rep cmpsb` instruction.
 
 # Level 4
 
-User: leviathan4
-Pass: vuH0coox6m
+User: leviathan4  
+Pass: vuH0coox6m  
 
 This level just involves translating some binary numbers into the ASCII password.  Running ltrace you see that 
 the setuid program at `~/.trash/bin` just reads the leviathan5 password file.  A simple ruby script can translate 
@@ -143,8 +143,8 @@ for us:
      
 # Level 5
 
-User: leviathan5
-Pass: Tith4cokei
+User: leviathan5  
+Pass: Tith4cokei  
 
 Another straight forward level.  The idea here is that the setuid program `leviathan5` reads from a file called 
 `/tmp/file.log`.  Because the program is setuid to `leviathan6` and the `fopen()` function follows symlinks, we 
@@ -160,8 +160,8 @@ just need to create a symlink to the password file and run the program.
     
 # Level 6
 
-User: leviathan6
-Pass: UgaoFee4li
+User: leviathan6  
+Pass: UgaoFee4li  
 
 This level is all about comparing numbers.  If you run the program without arguments it compalins that you need 
 to give it a four digit number.  Running the program in GDB you can see where it does the comparison at offset 
@@ -225,7 +225,7 @@ Now we run the program with our new number.
     
 # Level 7
 
-User: leviathan7
-Pass: ahy7MaeBo9
+User: leviathan7  
+Pass: ahy7MaeBo9  
 
 This level gives us a pleasant little congrats for getting here. Yay!
